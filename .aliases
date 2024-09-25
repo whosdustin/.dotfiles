@@ -1,9 +1,6 @@
 ## get rid of command not found ##
 alias zshconfig="zed ~/.zshrc"
 
-## Apparenlty I need to copy this more often than I thought.
-alias sshcopy="pbcopy < ~/.ssh/id_rsa.pub"
-
 ## Docker
 alias dockerls="docker ps --format \"table {{.Names}}\t{{.State}}\t{{.Image}}\""
 

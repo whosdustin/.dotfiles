@@ -11,6 +11,7 @@ $git_metrics\
 $git_status\
 $fill\
 $cmd_duration\
+$bun\
 $nodejs\
 $deno\
 $line_break\
@@ -18,6 +19,7 @@ $character
 """
 
 add_newline = true
+command_timeout = 1000
 
 [fill]
 symbol = " "
@@ -36,10 +38,14 @@ staged = '[+$count](green)'
 untracked = '[?$count](yellow)'
 
 [cmd_duration]
-format = "[󱦟$duration ]($style)"
+format = "[󱦟 $duration ]($style)"
 
 [nodejs]
 format = "[$symbol($version )]($style)"
 
 [deno]
+format = "[$symbol($version )]($style)"
+
+[bun]
+symbol = "🧄 "
 format = "[$symbol($version )]($style)"
