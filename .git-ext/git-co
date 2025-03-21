@@ -2,11 +2,11 @@
 
 [[ -n "$1" ]] && git switch $@ && exit 0
 
-format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:green)(%(committerdate:relative))"
+FORMAT="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:green)(%(committerdate:relative))"
 
 CHOSEN_BRANCH=$(git for-each-ref --color \
   --sort=-committerdate \
-  --format="$format" \
+  --format="$FORMAT" \
   refs/heads \
   | sed '/^*/d' \
   | gum choose \

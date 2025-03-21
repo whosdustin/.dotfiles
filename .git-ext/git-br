@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+REF_NAME="%(refname:short)"
+HEAD="%(color:yellow) → $REF_NAME"
+CONDITIONAL_REF_NAME="%(if)%(HEAD)%(then)$HEAD%(else)%(align:left, 7)%(color:white)%(end)$REF_NAME%(end)"
+COMMITTER_TIME="%(color:black)%(committerdate:relative)"
+FORMAT="$CONDITIONAL_REF_NAME $COMMITTER_TIME"
+
+git branch --format="$FORMAT" --sort=-committerdate
