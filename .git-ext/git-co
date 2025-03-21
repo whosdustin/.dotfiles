@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+[[ -n "$1" ]] && git switch $@ && exit 0
+
+format="%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:green)(%(committerdate:relative))"
+
+CHOSEN_BRANCH=$(git for-each-ref --color \
+  --sort=-committerdate \
+  --format="$format" \
+  refs/heads \
+  | sed '/^*/d' \
+  | gum choose \
+  | sed 's/,.*//'
+)
+
+[[ -n "$CHOOSEN_BRANCH" ]] && git switch $CHOOSEN_BRANCH
