@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+REF_NAME="%(refname:short)"
+HEAD="%(color:yellow) → $REF_NAME"
+CONDITIONAL_REF_NAME="%(if)%(HEAD)%(then)$HEAD%(else)%(align:left, 7)%(color:white)%(end)$REF_NAME%(end)"
+COMMITTER_TIME="%(color:black)%(committerdate:relative)"
+FORMAT="$CONDITIONAL_REF_NAME $COMMITTER_TIME"
+
+to_kebab() {
+  [[ -z "$1" ]] && return 0
+
+  echo "$1" | tr '[:upper:]' '[:lower:]' | tr ' _.' '-' | sed 's/--*/-/g; s/^-//; s/-$//'
+}
+
+case "$1" in
+  new | create)
+    TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
+    SUMMARY=$(gum input --placeholder "Summary of this change")
+    test -n "$SUMMARY" && SUMMARY=$(to_kebab "$SUMMARY")
+    git switch -c "$TYPE/$SUMMARY"
+    ;;
+  *)
+    git branch --format="$FORMAT" --sort=-committerdate
+    ;;
+esac

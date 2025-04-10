@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [[ -z $1 ]]; then
+  echo "Enter a count of commits back you wish to squash."
+  exit 0
+fi
+
+git rebase -i HEAD~$1 --autosquash

@@ -9,8 +9,8 @@ fpath+=~/.zfunc
 export PATH="$HOME/.deno/bin:$PATH"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
-# My git extensions
-export PATH="$HOME/.git-ext:$PATH"
+# My shell scripts
+export PATH="$HOME/.bin:$PATH"
 
 source $HOME/.aliases
 # bun completions
