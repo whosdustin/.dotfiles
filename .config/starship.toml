@@ -41,11 +41,14 @@ untracked = '[?$count](yellow)'
 format = "[󱦟 $duration ]($style)"
 
 [nodejs]
+style = "bold black"
 format = "[$symbol($version )]($style)"
 
 [deno]
+style = "bold black"
 format = "[$symbol($version )]($style)"
 
 [bun]
 symbol = " "
+style = "bold black"
 format = "[$symbol($version )]($style)"

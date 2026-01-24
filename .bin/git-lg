@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-FORMAT="%Cred%h%Creset -%C(yellow)%d%Creset %s %C(blue)@%an %C(black)%cr%Creset"
-git log --format="$FORMAT" --graph --abbrev-commit
