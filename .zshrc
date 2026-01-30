@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 # User configuration
 plugins=(git 1password)
@@ -12,7 +13,6 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 # My shell scripts
 export PATH="$HOME/.bin:$PATH"
 
-source $HOME/.aliases
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
