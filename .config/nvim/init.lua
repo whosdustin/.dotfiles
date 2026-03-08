@@ -16,6 +16,11 @@ vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"*y')
 vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"*d')
 vim.keymap.set({ "n" }, "<leader>f", ":Pick files<CR>")
 vim.keymap.set({ "n" }, "<leader>lf", vim.lsp.buf.format)
+vim.keymap.set({ "n" }, "<leader>lg", ":LazyGit<CR>")
+vim.keymap.set({ "n", "v", "x" }, "<leader>e", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "K", function()
+	vim.lsp.buf.hover { border = "rounded", max_height = 25, max_width = 120 }
+end, { desc = "Hover docs" })
 
 --Plugins
 vim.pack.add({
@@ -26,6 +31,8 @@ vim.pack.add({
 	{ src = "git@github.com:nvim-mini/mini.icons.git" },
 	{ src = "git@github.com:nvim-mini/mini.pick.git" },
 	{ src = "git@github.com:lewis6991/gitsigns.nvim.git" },
+	{ src = "git@github.com:kdheepak/lazygit.nvim.git" },
+	{ src = "git@github.com:nvim-tree/nvim-tree.lua.git" },
 })
 
 vim.cmd("colorscheme catppuccin-mocha")
@@ -34,9 +41,17 @@ vim.lsp.enable {
 	"lua_ls"
 }
 
+vim.lsp.config("lua_ls", {
+	settings = {
+		Lua = {
+			diagnostics = { globals = { "vim" }}
+		}
+	}
+})
+
 require "mini.pairs".setup()
 require "mini.icons".setup()
-
+require "nvim-tree".setup()
 require "gitsigns".setup {
 	signs = {
 		add = { text = "▎" },
