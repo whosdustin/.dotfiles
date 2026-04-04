@@ -38,6 +38,7 @@ formulae = [
   "just",
   "ripgrep",
   "fzf",
+  "glow",
 ]
 casks = [
   "1password",
