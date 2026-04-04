@@ -1,0 +1,95 @@
+# ============================================================================
+# mac.toml — starter config
+# Edit this file, then run:  mac apply
+# Full reference: https://github.com/idioticdev/mac#config-reference
+# ============================================================================
+
+[machine]
+computer_name  = "Dustin’s MacBook Air"
+local_hostname = "Dustins-MacBook-Air"
+
+[packages]
+formulae = [
+  "git",
+  "stow",
+  "neovim",
+  "bat",
+  "colordiff",
+  "fnm",
+  "delta",
+  "gum",
+  "httpie",
+  "jq",
+  "nmap",
+  "starship",
+  "tmux",
+  "nmap",
+  "eza",
+  "zoxide",
+  "bfg-repo-cleaner",
+  "git-cliff",
+  "gnupg",
+  "imagemagick",
+  "deno",
+  "bun",
+  "pam-reattach",
+  "lazygit",
+  "go",
+  "just",
+  "ripgrep",
+  "fzf",
+]
+casks = [
+  "1password",
+  "1password-cli",
+  "brave-browser",
+  "discord",
+  "figma",
+  "firefox",
+  "ghostty",
+  "jordanbaird-ice",
+  "ngrok",
+  "nvidia-geforce-now",
+  "orbstack",
+  "yaak",
+  "raycast",
+  "slack",
+  "spotify",
+  "tableplus",
+  "ledger-wallet",
+  "wezterm",
+]
+
+# [dotfiles]
+# repo          = "git@github.com:you/dotfiles.git"
+# dest          = "~/.dotfiles"
+# method        = "stow"
+# stow_packages = ["zsh", "git"]
+
+[system]
+pam_tid = true   # Enable Touch ID for sudo
+key_remapping = [
+  { from = "caps_lock", to = "escape" },
+  { from = "left_fn",   to = "left_control" }
+]
+
+[defaults.".GlobalPreferences"]
+"com.apple.mouse.scaling" = 1
+
+[defaults.NSGlobalDomain]
+AppleInterfaceStyle = "Dark"
+AppleIconAppearanceTheme = "RegularDark"
+NSAutomaticCapitalizationEnabled = false
+"com.apple.swipescrolldirection" = false
+
+[defaults."com.apple.finder"]
+ShowStatusBar = false
+FXPreferredViewStyle = "clmv"
+
+[defaults."com.apple.dock"]
+autohide = true
+
+[hooks]
+post_install = [
+    "softwareupdate --install-rosetta --agree-to-license 2>/dev/null || true",
+]
