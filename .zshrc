@@ -1,14 +1,16 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+setopt auto_cd
 
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+eval "$(mac shell-init)"
 
 # User configuration
 plugins=(git 1password)
 fpath+=~/.zfunc
 export PATH="$HOME/.deno/bin:$PATH"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+source ~/.aliases
 
 # My shell scripts
 export PATH="$HOME/.bin:$PATH"
@@ -35,3 +37,5 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 export PATH="$HOME/.local/bin:$PATH"
+
+eval "$(zoxide init zsh)"
