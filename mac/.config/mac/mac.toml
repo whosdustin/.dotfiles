@@ -26,12 +26,11 @@ formulae = [
   "nmap",
   "eza",
   "zoxide",
-  "bfg-repo-cleaner",
   "git-cliff",
   "gnupg",
   "imagemagick",
   "deno",
-  "bun",
+  "oven-sh/bun/bun",
   "pam-reattach",
   "lazygit",
   "go",
@@ -61,11 +60,21 @@ casks = [
   "wezterm",
 ]
 
-# [dotfiles]
-# repo          = "git@github.com:you/dotfiles.git"
-# dest          = "~/.dotfiles"
-# method        = "stow"
-# stow_packages = ["zsh", "git"]
+[dotfiles]
+repo          = "git@github.com:you/dotfiles.git"
+dest          = "~/.dotfiles"
+method        = "stow"
+stow_packages = [
+  "bat",
+  "bin",
+  "mac",
+  "neovim",
+  "starship",
+  "tmux",
+  "wezterm",
+  "zed",
+  "zsh"
+]
 
 [system]
 pam_tid = true   # Enable Touch ID for sudo
