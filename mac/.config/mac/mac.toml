@@ -61,7 +61,7 @@ casks = [
 ]
 
 [dotfiles]
-repo          = "git@github.com:you/dotfiles.git"
+repo          = "git@github.com:whosdustin/.dotfiles.git"
 dest          = "~/.dotfiles"
 method        = "stow"
 stow_packages = [
