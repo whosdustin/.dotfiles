@@ -45,7 +45,11 @@ vim.cmd("colorscheme catppuccin-mocha")
 
 vim.lsp.enable {
   "lua_ls",
-  "gopls"
+  "gopls",
+  "bash",
+  "toml",
+  "json",
+  "vtls"
 }
 
 vim.lsp.config("lua_ls", {
@@ -61,7 +65,7 @@ require "mini.icons".setup()
 require "nvim-tree".setup()
 require "nvim-treesitter".setup {
   ensure_installed = {
-    "go", "lua", "typescript", "bash", "toml", "json", "html", "css"
+    "go", "lua", "typescript", "bash", "toml", "json", "html", "css", "yaml"
   },
   highlight = {
     enable = true,

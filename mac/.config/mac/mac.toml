@@ -38,6 +38,14 @@ formulae = [
   "ripgrep",
   "fzf",
   "glow",
+  "lua-language-server",
+  "typescript-language-server",
+  "vue-language-server",
+  "yaml-language-server",
+  "bash-language-server",
+  "gopls",
+  "tailwindcss-language-server",
+  "tombi",
 ]
 casks = [
   "1password",
@@ -71,6 +79,7 @@ stow_packages = [
   "neovim",
   "starship",
   "tmux",
+  "vim",
   "wezterm",
   "zed",
   "zsh"
